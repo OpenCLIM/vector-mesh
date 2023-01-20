@@ -1,0 +1,57 @@
+kind: M
+api_version: v1beta2
+metadata:
+  display_name: Grid Based Data Selector
+  name: vector-mesh
+  publisher: Newcastle University
+  summary: >
+    This model takes national scale datasets and clips them to a geographical area.
+  source_code: https://github.com/OpenCLIM/vector_mesh
+  description: >
+    National scale datasets are too large to upload onto DAFNI, and processing these large datasets is time extensive. Models such as City Catchment Analysis Tool,
+    require vector data from the national datasets for a city of interest. The national data sets have been uploaded onto DAFNI in zip format for each 100km OS grid cell. 
+    Geopackage files within the zip folders contain the vector data per 5km OS grid cell. This model identifies which 5km grid cells are contained within the boundary 
+    file for the city of interest, and merges the geopackage to generate a single gpkg file for the city.
+
+spec:
+  inputs:
+    parameters:
+      - name: LOCATION
+        title: Location
+        type: string
+        description: The city/location of interest
+        default: Newcastle
+        required: true
+        
+        
+    dataslots:
+      - name: Boundary File
+        description:
+          A .gpkg or .shp file containing the boundary of the location of interest.
+        default:
+          - 09a6bbc0-8d2c-4e1b-a0d2-7f11833f20ea
+        path: inputs/boundary/
+        required: false
+
+      - name: Grids
+        description:
+          The 5km OS grid cells for the UK.
+        default:
+          - 7358511d-76ec-484b-8996-66af6e6ea8de
+        path: inputs/grids/
+        required: false
+
+      - name: Vectors
+        description:
+          National vector datasets (saved by OS grid cells).
+        path: inputs/vectors/
+        required: false
+        
+        
+        
+  outputs:
+    datasets:
+      - name: outputs
+        type: folder
+        description: path to model outputs
+        
