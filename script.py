@@ -100,14 +100,14 @@ to_merge=[]
 to_merge=['XX' for n in range(len(archive))]
 for i in range (0,len(archive)):
     file_path = os.path.splitext(archive[i][0])
-    filename=file_path[0].split("\\")
+    filename=file_path[0].split("/")
     to_merge[i]=filename[3]+'.gpkg'
 
 # Create a geodatabase and merge the data from each gpkg together
 original = []
 original=gpd.GeoDataFrame(original)
 for cell in to_merge:
-    gdf = gpd.read_file('\data\inputs\vectors\%s' %cell)
+    gdf = gpd.read_file('/data/inputs/vectors/%s' %cell)
     original = pd.concat([gdf, original],ignore_index=True)
 
 # Print to a gpkg file
