@@ -18,12 +18,15 @@ vector_path = os.path.join(inputs_path, 'vectors')
 location = os.getenv('LOCATION')
 
 vector_output = os.path.join(outputs_path, location + '.gpkg')
+print(vector_output)
 
 # Identify input polygons and shapes (boundary of city, and OS grid cell references)
 boundary = glob(boundary_path + "/*.*", recursive = True)
 boundary = gpd.read_file(boundary[0])
+print(boundary)
 grid = glob(grids_path + "/*_5km.gpkg", recursive = True)
 grid = gpd.read_file(grid[0])
+print(grid)
 
 # Ensure all of the polygons are defined by the same crs
 boundary.set_crs(epsg=27700, inplace=True)
@@ -32,6 +35,7 @@ grid.set_crs(epsg=27700, inplace=True)
 # Identify which of the 5km OS grid cells fall within the chosen city boundary
 cells_needed = gpd.overlay(boundary,grid, how='intersection')
 list = cells_needed['tile_name']
+print(list)
 
 # Identify which of the 100km OS grid cells fall within the chosen city boundary 
 # This will determine which folders are needed to retrieve the DTM for the area
@@ -64,6 +68,8 @@ for i in range(0,len(grid_100)):
     name_path = os.path.join(vector_path, name + '.zip')
     files_to_unzip[i] = name_path
 
+print(files_to_unzip)
+
 # Unzip the required files
 for i in range (0,len(files_to_unzip)):
     if os.path.exists(files_to_unzip[i]) :
@@ -86,6 +92,8 @@ for i in range(0,len(grid_5)):
 # Remove the empty grid cells from the list
 while([] in archive):
     archive.remove([])
+    
+print(archive)
 
 # Create a list of all of the gpkgs to be merged
 to_merge=[]
