@@ -6,7 +6,7 @@ metadata:
   publisher: Newcastle University
   summary: >
     This model takes national scale datasets and clips them to a geographical area.
-  source_code: https://github.com/OpenCLIM/vector_mesh
+  source_code: https://github.com/OpenCLIM/vector-mesh
   description: >
     National scale datasets are too large to upload onto DAFNI, and processing these large datasets is time extensive. Models such as City Catchment Analysis Tool,
     require vector data from the national datasets for a city of interest. The national data sets have been uploaded onto DAFNI in zip format for each 100km OS grid cell. 
