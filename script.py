@@ -92,12 +92,8 @@ to_merge=[]
 to_merge=['XX' for n in range(len(archive))]
 for i in range (0,len(archive)):
     file_path = os.path.splitext(archive[i][0])
-    print("file_path:")
-    print(file_path)
     filename=file_path[0].split("/")
-    print("filename:")
-    print(filename)
-    to_merge[i]=filename[3]+'.gpkg'
+    to_merge[i]=filename[4]+'.gpkg'
 
 # Create a geodatabase and merge the data from each gpkg together
 original = []
