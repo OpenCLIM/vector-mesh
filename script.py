@@ -601,10 +601,10 @@ print('Completed running clip')
 # Remove unclipped file
 os.remove(input_file)
 
-# Move the clipped file into a new folder and remove the _clip
-src=os.path.join(outputs_path, location + '_clip.gpkg')
-dst=os.path.join(buildings_path, location + '.gpkg')
-shutil.copy(src,dst)
+# # Move the clipped file into a new folder and remove the _clip
+# src=os.path.join(outputs_path, location + '_clip.gpkg')
+# dst=os.path.join(buildings_path, location + '.gpkg')
+# shutil.copy(src,dst)
 
-# Remove duplicate file
-os.remove(join(outputs_path, location + '_clip.gpkg'))
+# # Remove duplicate file
+# os.remove(join(outputs_path, location + '_clip.gpkg'))
