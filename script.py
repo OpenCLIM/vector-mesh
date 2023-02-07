@@ -20,10 +20,10 @@ outputs_path_ = data_path + '/' + 'outputs'
 if not os.path.exists(outputs_path):
     os.mkdir(outputs_path_)
 vector_path = os.path.join(inputs_path, 'vectors')
-buildings_path = os.path.join(outputs_path,'buildings')
-buildings_path_ = outputs_path + '/' + 'buildings'
-if not os.path.exists(buildings_path):
-    os.mkdir(buildings_path_)
+# buildings_path = os.path.join(outputs_path,'buildings')
+# buildings_path_ = outputs_path + '/' + 'buildings'
+# if not os.path.exists(buildings_path):
+#     os.mkdir(buildings_path_)
 
 location = os.getenv('LOCATION')
 
