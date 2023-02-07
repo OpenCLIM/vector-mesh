@@ -507,6 +507,7 @@ for input_file in input_files:
         print('Running vector clip')
 
         output_file_name_set = output_file_name(input_file, output_file, len(input_files))
+	print('Output_file_name_set:',output_file_name_set)
 
         if clip_file is not None:
             subprocess.run(["ogr2ogr", "-clipsrc", clip_file, "-f", "GPKG",
