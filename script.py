@@ -21,14 +21,19 @@ if not os.path.exists(buildings_path):
     os.mkdir(buildings_path_)
 vector_path = os.path.join(inputs_path, 'vectors')
 
-location = os.getenv('LOCATION')
-
-vector_output = os.path.join(outputs_path, location + '.gpkg')
-print('Vector Output File Name:', vector_output)
 
 # Identify input polygons and shapes (boundary of city, and OS grid cell references)
 boundary_1 = glob(boundary_path + "/*.*", recursive = True)
 print('Boundary File:',boundary_1)
+
+# Identify the name of the boundary file for the city name
+file_path = os.path.splitext(boundary_1[0])
+filename=file_path[0].split("\\")
+location = filename[-1]
+
+vector_output = os.path.join(outputs_path, location + '.gpkg')
+print('Vector Output File Name:', vector_output)
+
 boundary = gpd.read_file(boundary_1[0])
 grid = glob(grids_path + "/*_5km.gpkg", recursive = True)
 print('Grid File:',grid)
