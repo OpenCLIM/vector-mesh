@@ -15,15 +15,6 @@ metadata:
 
 spec:
   inputs:
-    parameters:
-      - name: LOCATION
-        title: Location
-        type: string
-        description: The city/location of interest
-        default: Newcastle
-        required: true
-        
-        
     dataslots:
       - name: Boundary File
         description:
@@ -46,8 +37,7 @@ spec:
           National vector datasets (saved by OS grid cells).
         path: inputs/vectors/
         required: false
-        
-        
+         
         
   outputs:
     datasets:
