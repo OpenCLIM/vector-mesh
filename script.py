@@ -28,8 +28,11 @@ print('Boundary File:',boundary_1)
 
 # Identify the name of the boundary file for the city name
 file_path = os.path.splitext(boundary_1[0])
-filename=file_path[0].split("\\")
+print('File_path:',file_path)
+filename=file_path[0].split("/")
+print('filename:',filename)
 location = filename[-1]
+print('Location:',location)
 
 vector_output = os.path.join(outputs_path, location + '.gpkg')
 print('Vector Output File Name:', vector_output)
