@@ -35,6 +35,12 @@ spec:
       - name: Vectors
         description:
           National vector datasets (saved by OS grid cells).
+        default:
+          - 0eed4eb0-9795-414d-9008-939b8ebf8821
+          - 4da2cddf-f626-40f5-959d-a16e57ffe806
+          - df89bca6-13f7-49c3-b373-72787eb52622
+          - 8164524d-d9fc-4b2d-9388-43a222d6ac3c
+          - 1fe727df-13e2-45ee-9ec7-c6e9f8dbbe3c
         path: inputs/vectors/
         required: false
          
