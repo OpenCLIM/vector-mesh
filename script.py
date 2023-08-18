@@ -55,12 +55,12 @@ list = cells_needed['tile_name']
 
 check=[]
 check=pd.DataFrame(check)
-check['cell_code']=['AAAAAA' for n in range(len(list)-1)]
-a_length = len(list[2])
+check['cell_code']=['AAAAAA' for n in range(len(list))]
+a_length = len(list[0])
 cell='A'
 
 # Look at each 5km cell that falls in the area and examine the first two digits
-for i in range(0,len(list)-1):
+for i in range(0,len(list)):
     cell=list[i]
     check.cell_code[i] = cell[a_length - 6:a_length - 4]
 
