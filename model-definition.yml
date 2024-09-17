@@ -1,7 +1,9 @@
 kind: M
-api_version: v1beta2
+api_version: v1beta3
 metadata:
   display_name: Urban_Flooding:Extract Buildings
+  contact_point_name: Olivia Butters
+  contact_point_email: olivia.butters@newcastle.ac.uk
   name: vector-mesh
   publisher: Newcastle University
   summary: >
