@@ -137,6 +137,7 @@ if len(buildings_premade) == 0:
 
     vector = gpd.read_file(vector_output)
     clipped = gpd.clip(vector,boundary)
+    clipped = clipped[clipped.geometry.type != 'GeometryCollection']
 
     # Print to a gpkg file
     clipped.to_file(os.path.join(outputs_path, location + '_clip.gpkg'),driver='GPKG',index=False)
